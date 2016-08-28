@@ -20,6 +20,15 @@ export default Ember.Component.extend({
 
       selectedFw.get('dependencies').pushObject(dependency);
       selectedFw.save();
+    },
+
+    delete() {
+      const selectedFw = this.get('selectedFw');
+
+      selectedFw.deleteRecord();
+      selectedFw.save().then(() => {
+        this.set('selectedFw', null);
+      });
     }
   }
 });

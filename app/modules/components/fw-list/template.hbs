@@ -10,24 +10,22 @@
     {{/each}}
   </div>
 
+  {{#if selectedFw}}
+    <div class="fw-logo col-xs-4">
+      <img width="170" src={{selectedFw.logo}} {{action "getDetails" on="click"}} />
+    </div>
 
-  <div class="fw-logo col-xs-4">
-    <img width="170" src={{selectedFw.logo}} {{action "getDetails" on="click"}} />
-  </div>
+    <div class="col-xs-4">
+      <button onclick={{action "delete"}}>Delete!</button>
 
-
-  <div class="col-xs-4">
-    {{#if selectedFw.dependencies}}
       <button onclick={{action "update"}}>Add dependency</button>
-    {{/if}}
 
-    <ul class="dependencies">
-      {{#each selectedFw.dependencies as |dependency|}}
-        <li>{{dependency.name}}</li>
-      {{/each}}
-    </ul>
-
-    <br>
-  </div>
+      <ul class="dependencies">
+        {{#each selectedFw.dependencies as |dependency|}}
+          <li>{{dependency.name}}</li>
+        {{/each}}
+      </ul>
+    </div>
+  {{/if}}
 </div>
 

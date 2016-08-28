@@ -1,0 +1,33 @@
+<div class="row">
+  <div class="radio-btn-group col-xs-4">
+    <strong>Select a framework/library:</strong>
+    {{#each frameworks as |fw|}}
+      <div>
+        {{#radio-button name="fw" value=fw groupValue=selectedFw}}
+          {{fw.name}}
+        {{/radio-button}}
+      </div>
+    {{/each}}
+  </div>
+
+
+  <div class="fw-logo col-xs-4">
+    <img width="170" src={{selectedFw.logo}} {{action "getDetails" on="click"}} />
+  </div>
+
+
+  <div class="col-xs-4">
+    {{#if selectedFw.dependencies}}
+      <button onclick={{action "update"}}>Add dependency</button>
+    {{/if}}
+
+    <ul class="dependencies">
+      {{#each selectedFw.dependencies as |dependency|}}
+        <li>{{dependency.name}}</li>
+      {{/each}}
+    </ul>
+
+    <br>
+  </div>
+</div>
+

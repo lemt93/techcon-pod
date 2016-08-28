@@ -1,2 +1,15 @@
-<h1>This is application route</h1>
-{{outlet}}
+<header class="main-menu flex-container">
+  <div class="kms-logo flex-item"></div>
+  <div class="ember-logo flex-item"></div>
+
+  <nav class="main-navigation flex-item">
+    {{#link-to "main-route"}}Route{{/link-to}}
+    {{#link-to "data-binding"}}Data Binding{{/link-to}}
+    {{#link-to "computed-properties"}}Computed Properties{{/link-to}}
+    {{#link-to "store"}}Model & Store{{/link-to}}
+  </nav>
+</header>
+
+<div class="content-wrapper">
+  {{outlet}}
+</div>

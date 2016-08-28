@@ -9,12 +9,14 @@ module.exports = function(app) {
         {
           id: 1,
           name: 'Ember.js',
-          logo: 'ember.png'
+          logo: 'ember.png',
+          dependencies: [1, 2]
         },
         {
           id: 2,
           name: 'React',
-          logo: 'react.png'
+          logo: 'react.png',
+          dependencies: [3, 4]
         },
         {
           id: 3,
@@ -30,9 +32,16 @@ module.exports = function(app) {
   });
 
   frameworksRouter.get('/:id', function(req, res) {
+    var dependencies = {
+      1: [1, 2],
+      2: [3, 4],
+      3: [1, 2, 3, 4, 5]
+    };
+
     res.send({
       'frameworks': {
-        id: req.params.id
+        id: req.params.id,
+        dependencies: dependencies[req.params.id]
       }
     });
   });

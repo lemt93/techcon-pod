@@ -2,7 +2,7 @@
 
 module.exports = function(environment) {
   var ENV = {
-    modulePrefix: 'techon-demo',
+    modulePrefix: 'techcon-demo',
     environment: environment,
     rootURL: '/',
     locationType: 'auto',

@@ -5,7 +5,23 @@ module.exports = function(app) {
 
   frameworksRouter.get('/', function(req, res) {
     res.send({
-      'frameworks': []
+      'frameworks': [
+        {
+          id: 1,
+          name: 'Ember.js',
+          logo: 'ember.png'
+        },
+        {
+          id: 2,
+          name: 'React',
+          logo: 'react.png'
+        },
+        {
+          id: 3,
+          name: 'Angular 2',
+          logo: 'angular.png'
+        }
+      ]
     });
   });
 

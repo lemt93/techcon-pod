@@ -1,1 +1,59 @@
 @import "flex-grid";
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  padding: 0;
+}
+
+.main-menu {
+  height: 50px;
+  border-bottom: 1px solid rgba(0,0,0,0.075);
+  box-shadow: 0 0 5px rgba(0,0,0,0.1);
+  justify-content: center;
+
+  a {
+    font-size: 1em;
+    padding: 17px 5px;
+    text-decoration: none;
+
+    &:hover, &:visited, &:active {
+      color: #666;
+      text-decoration: none;
+    }
+
+    &.active {
+      border-bottom: 3px solid #30a6e0;
+    }
+  }
+
+  .kms-logo {
+    background: url("/kms-technology.png") no-repeat;
+    background-size: contain;
+    width: 140px;
+    flex: 0 0 auto;
+  }
+
+  .ember-logo {
+    background: url("/ember.png") no-repeat;
+    background-size: contain;
+    width: 54px;
+    flex: 0 0 auto;
+  }
+
+  .main-navigation {
+    flex: 0 0 auto;
+  }
+}
+
+.content-wrapper {
+  width: 66.7%;
+  margin: 35px auto;
+}
+
+.fw-logo {
+  cursor: pointer;
+}

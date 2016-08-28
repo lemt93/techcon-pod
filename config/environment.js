@@ -3,6 +3,7 @@
 module.exports = function(environment) {
   var ENV = {
     modulePrefix: 'techcon-demo',
+    podModulePrefix: 'techcon-demo/modules',
     environment: environment,
     rootURL: '/',
     locationType: 'auto',

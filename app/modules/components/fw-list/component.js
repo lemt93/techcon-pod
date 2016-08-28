@@ -1,3 +1,4 @@
+
 import Ember from 'ember';
 
 export default Ember.Component.extend({
@@ -11,24 +12,22 @@ export default Ember.Component.extend({
       this.get('store').find('framework', selectedFw.get('id'));
     },
 
-    update() {
+    async update() {
       const selectedFw = this.get('selectedFw');
       const dependency = this.get('store').createRecord('dependency', {
         name: '# dependency'
       });
-      dependency.save();
 
+      await dependency.save();
       selectedFw.get('dependencies').pushObject(dependency);
       selectedFw.save();
     },
 
-    delete() {
+    async delete() {
       const selectedFw = this.get('selectedFw');
-
       selectedFw.deleteRecord();
-      selectedFw.save().then(() => {
-        this.set('selectedFw', null);
-      });
+      await selectedFw.save();
+      this.set('selectedFw', null);
     }
   }
 });

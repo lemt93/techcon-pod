@@ -1,5 +1,8 @@
 # Techcon-demo
 
+## Slide
+You can view the slide or download it at [http://www.slideshare.net/](http://www.slideshare.net/TamLe64/creating-ambitious-web-application-with-emberjs)
+
 This README outlines the details of collaborating on this Ember application.
 A short introduction of this app could easily go here.
 

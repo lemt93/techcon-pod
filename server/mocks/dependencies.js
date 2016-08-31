@@ -2,6 +2,7 @@
 module.exports = function(app) {
   var express = require('express');
   var dependenciesRouter = express.Router();
+  var id = 5;
 
   dependenciesRouter.get('/', function(req, res) {
     res.send({
@@ -10,7 +11,12 @@ module.exports = function(app) {
   });
 
   dependenciesRouter.post('/', function(req, res) {
-    res.send({});
+
+    res.send({
+      dependency: {
+        id: ++id
+      }
+    });
   });
 
   dependenciesRouter.get('/:id', function(req, res) {

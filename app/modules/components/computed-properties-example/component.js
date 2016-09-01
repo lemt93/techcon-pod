@@ -7,6 +7,7 @@ export default Ember.Component.extend({
 
   cool: Ember.computed.and('react', 'angular'),
   awesome: Ember.computed.and('cool', 'ember'),
+  superb: Ember.computed.alias('awesome'),
   yell: Ember.computed('awesome', function () {
     return this.get('awesome') ? 'Awesome!' : 'Cool.';
   }),

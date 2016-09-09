@@ -8,7 +8,7 @@ const Router = Ember.Router.extend({
 
 Router.map(function() {
   this.route('main-route', function() {
-    this.route('nested-route');
+    this.route('nested-route', { path: '/nested-route/:id' });
   });
   this.route('store', { path: '/store-example' });
   this.route('data-binding');
